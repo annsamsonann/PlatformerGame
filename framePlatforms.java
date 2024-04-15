@@ -26,13 +26,13 @@ class platformCanvas extends JPanel  {
         }
 
     public void drawRectangle(Graphics g){
-        int m= 4;
+        int m= 7;
         double xCoord;
         double yCoord = 850;
         Randomization rand = new Randomization();
-        
 
         final int height = 30;
+
         ArrayList <Rectangle2D> platformsList = new ArrayList<>();
         Color c = Color.BLUE; 
         Graphics2D g2d = (Graphics2D) g;
@@ -44,8 +44,11 @@ class platformCanvas extends JPanel  {
                 xCoord = Randomization.randomXCoord();
                 Rectangle2D rect = new Rectangle2D.Double(xCoord, yCoord, width, height);
                 platformsList.add(rect);
-                xCoord+=300; 
+                //xCoord+=300; 
+                //random increment insrted of full random?
+
             }
+            Randomization.setXCoord(0);
             yCoord-=200;
         }
         g2d.setColor(c );
