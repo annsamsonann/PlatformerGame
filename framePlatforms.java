@@ -27,19 +27,26 @@ class platformCanvas extends JPanel  {
 
     public void drawRectangle(Graphics g){
         int m= 4;
-        int xCoord = 100;
-        int yCoord = 850;
-        //Randomization rand = new Randomization();
-       //double width = Randomization.randomWidth();
+        double xCoord;
+        double yCoord = 850;
+        Randomization rand = new Randomization();
+        
+
         final int height = 30;
         ArrayList <Rectangle2D> platformsList = new ArrayList<>();
         Color c = Color.BLUE; 
         Graphics2D g2d = (Graphics2D) g;
+
         //creates an array of leveled platfroms (have the same yCoord)
-        for (int i=0; i<m;i++){
-            Rectangle2D rect = new Rectangle2D.Double(xCoord, yCoord, 200, height);
-            platformsList.add(rect);
-            xCoord+=300; 
+        for(int l= 0; l<5; l++){
+            for (int i=0; i<m;i++){
+                double width = Randomization.randomWidth();
+                xCoord = Randomization.randomXCoord();
+                Rectangle2D rect = new Rectangle2D.Double(xCoord, yCoord, width, height);
+                platformsList.add(rect);
+                xCoord+=300; 
+            }
+            yCoord-=200;
         }
         g2d.setColor(c );
         for (Rectangle2D rects: platformsList){
@@ -47,5 +54,8 @@ class platformCanvas extends JPanel  {
             g2d.draw(rects); }
 
     }
+   
+}
+
    
 }
