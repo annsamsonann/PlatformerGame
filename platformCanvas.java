@@ -6,19 +6,19 @@ import java.awt.geom.Rectangle2D;
 import java.awt.Graphics2D;
 import java.util.ArrayList;
 //JFrame
-public class framePlatforms {
-    static int x = 1000;
-    static int y = 1000;
-    public static void main(String[] args){
-        JFrame frame = new JFrame();
-        frame.setDefaultCloseOperation(JFrame. EXIT_ON_CLOSE);
-        frame.setSize(x,y);
-        frame.add(new platformCanvas());
-        frame.setVisible(true);
-        }
-}
+// public class framePlatforms {
+//     static int x = 1000;
+//     static int y = 1000;
+//     public static void main(String[] args){
+//         JFrame frame = new JFrame();
+//         frame.setDefaultCloseOperation(JFrame. EXIT_ON_CLOSE);
+//         frame.setSize(x,y);
+//         frame.add(new platformCanvas());
+//         frame.setVisible(true);
+//         }
+// }
 //Drawing 
-class platformCanvas extends JPanel  {
+public class platformCanvas extends JPanel  {
     @Override
     public void paintComponent(Graphics g){
         super.paintComponent(g);
