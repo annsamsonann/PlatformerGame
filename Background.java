@@ -64,6 +64,7 @@ public class Background extends JPanel{
         Timer addRocket = new Timer(5000, new TimerCallback3());
         moveRocket.start();
         addRocket.start();
+	Rocket.addRocket();
     }
     // override and draw clouds when panel is painted
     @Override
