@@ -1,5 +1,3 @@
-//update the score with time
-//ending mechanism with timer 
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -8,7 +6,6 @@ import java.util.ArrayList;
 import java.awt.GradientPaint;  
 public class platformCanvas {
     static Color c = Color.BLUE; 
-    //40
     final static int numOfLevels = 46;
     final static int maxNumOfPlatforms =3;
     final static int heightOfPlatform = 30;
@@ -53,11 +50,10 @@ public class platformCanvas {
                 }
                 platformsList.add(rect);
             }
+            //resets the Xcoordintate so that the first platform of the next level is incremented from 0
             Randomization.setXCoord(0);
             yCoord-= yCoordInterval;
         }
-       // Rectangle2D finalRect = new Rectangle2D.Double(0, 0, 1000, heightOfPlatform);
-        //platformsList.add(finalRect);
 
     }
     //change in each platform yCoord + 1 
