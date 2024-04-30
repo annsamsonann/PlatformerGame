@@ -16,7 +16,6 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.GradientPaint;  
 
-
 public class Background extends JPanel implements KeyListener {
     static Color cloudsBlue = new Color(111,174,255); 
     static GradientPaint gp2 = new GradientPaint(500, 0, Color.WHITE, 500, 150, cloudsBlue);  
@@ -98,7 +97,7 @@ public class Background extends JPanel implements KeyListener {
         ScoreAndTime.drawTime(g);
         ScoreAndTime.drawScore(g);
     }
-   //Timer that end the game if player is dead
+   //Timer that ends the game if player is dead
     protected class checkIfAliveTimer implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
             if (player.isAlive() == false) {
@@ -117,6 +116,7 @@ public class Background extends JPanel implements KeyListener {
             }
         }
     }
+	//changes the IsAlive status of the player to false after 2 min 
     protected class timeEndsTimer implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
             player.setIsAlive(false);
