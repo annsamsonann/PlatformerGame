@@ -3,7 +3,6 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Color;
 import java.awt.GradientPaint; 
-
 import java.awt.geom.RoundRectangle2D;
 public class ScoreAndTime {
     public static int min;
@@ -16,14 +15,10 @@ public class ScoreAndTime {
     public static int xScore = 730;
     public static int yScore = 150 ; 
     static RoundRectangle2D rect = new RoundRectangle2D.Double(-100,-100,1,1, 10,10);
-
     static Color grad2 = new Color( 255,  158,  158,  250); 
     static GradientPaint gp1 = new GradientPaint(500, 1000, Color.DARK_GRAY, 150, 150, Color.DARK_GRAY);  
     static GradientPaint gp2 = new GradientPaint(500, 1000, Color.ORANGE, 500, 150, grad2);  
-    
-
     static Color c = Color.GRAY; 
-
     public ScoreAndTime(int secLeft, int score){
         //calculate min and sec from sec 
         min = (secLeft % 3600) / 60;
@@ -33,12 +28,11 @@ public class ScoreAndTime {
         time =  String.format("You have %02d:%02d left ", min, sec);
         scoreSt = String.format("You earned %d points", score);
     }
+    //returns how much time is left
     public static int getTimeLeft(){
         int totalSecLeft = sec + (min*60);
         return totalSecLeft;
-
     }
-
     public static void drawTime(Graphics g){
         Graphics2D g2 = (Graphics2D) g;
         g2.setPaint(gp2); 
@@ -61,12 +55,8 @@ public class ScoreAndTime {
         yTime = 500;
         xScore = 400;
         yScore = 550;
-       
-       
         end =" Congratulations! You won with the following score: ";
         RoundRectangle2D rectEnd = new RoundRectangle2D.Double(230,yTime-100,600,200,50,50);
         rect=rectEnd;
-
-        
     }
 }
